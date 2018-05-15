@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>课程详情分享</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/cardsDetails.css">
+</head>
+<body>
+	<!-- 模块1 model-1 本店会员卡信息-->
+	<div class="model-1"></div>
+	<!-- 模块2 model-2 商户信息+年卡内容+购买须知-->
+	<div class="model-2">
+		<ul class="father"></ul>
+	</div>
+	<!-- 底部 前往Five -->
+	<div class="lookmore">
+		<h1 class="animated bounceInLeft">到 Five 查看更多</h1>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/classDetails.js"></script>
+	<script src="js/template.js"></script>
+	<!-- 模块1 model-1 本店课程信息 (渲染) -->
+	<script id="tpl-1" type="text/html">
+    	<div class="img animated bounce">
+			<img src="http://www.mffive.com:8080{{obj.avatar}}" alt="">
+		</div>
+		<h1 class="animated bounce">{{obj.title}}</h1>
+		<p class="animated bounce">¥{{obj.fivePrice}} <del>门市价¥{{obj.retailPrice}}</del></p>
+		<p class="description animated bounce">{{obj.description}}</p>
+  </script>
+  <!-- 模块2 model-2 商户信息+年卡内容+购买须知 (渲染) -->
+	<script id="tpl-2" type="text/html">
+		<li class="animated bounce">
+			<h1>商户信息</h1>
+			<p><span>地点 : </span>{{obj.address}}</p>
+			<p><span>营业时间 : </span>{{obj.openTime}}</p>
+		</li>
+		<li class="animated bounce">
+			<h1>课程内容</h1>
+			<p>{{obj.content}}</p>
+		</li>
+		<li class="animated bounce">
+			<h1>购买须知</h1>
+			<p>{{obj.buyNotice}}</p>
+		</li>
+  </script>
+  <script type="text/javascript" src="//f.moblink.mob.com/3.0.1/moblink.js?appkey=2527af3e86b85"></script>
+  <script>
+  	MobLink({
+        el: '',
+        path: 'demo/a',
+        params: {
+             key1: 'value1',
+             key2: 'value2',
+        }
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>训练+饮食文章详情分享</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/train+food.css">
+</head>
+<body>
+	<!-- 模块1 model-1 图片+文章-->
+	<div class="model-1"></div>
+	<!-- 底部 前往Five -->
+	<div class="lookmore">
+		<h1 class="animated bounceInDown">到 Five 查看更多</h1>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/template.js"></script>
+	<script src="js/train+food.js"></script>
+<!-- 推荐饮食展示信息 -->
+  <script id="tpl-1" type="text/html">
+	<div class="img animated bounceInUp">
+		<img src="http://www.mffive.com:8080{{obj.picUrl}}" alt="">
+	</div>
+    <h1 class="animated bounceInDown">{{obj.title}}</h1>
+    <pre class="content animated bounceInUp">{{obj.content}}</pre>
+  </script>
+  <script type="text/javascript" src="//f.moblink.mob.com/3.0.1/moblink.js?appkey=2527af3e86b85"></script>
+  <script>
+  	MobLink({
+        el: '',
+        path: 'demo/a',
+        params: {
+             key1: 'value1',
+             key2: 'value2',
+        }
+      })
+  </script>
+</body>
+</html>

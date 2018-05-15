@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>教练详情分享</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/coachDetails.css">
+</head>
+<body>
+	<!-- 模块1 model-1 教练信息-->
+	<div class="model-1"></div>
+	<!-- 模块2 model-2 授课商户-->
+	<div class="model-2">
+		<h1 class="animated bounceInLeft">授课商户</h1>
+		<ul class="mother"></ul>
+	</div>
+	<!-- 模块3 model-3 课程购买-->
+	<div class="model-3">
+		<h1 class="animated bounceInLeft">课程购买</h1>
+		<ul class="father"></ul>
+	</div>
+	<!-- 底部 前往Five -->
+	<div class="lookmore">
+		<h1 class="animated bounceInLeft">到 Five 查看更多</h1>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/coachDetails.js"></script>
+	<script src="js/template.js"></script>
+	<!-- 模块1 model-1 教练信息 (渲染) -->
+	<script id="tpl-1" type="text/html">
+    	<div class="img animated bounceInLeft">
+			<img src="http://www.mffive.com:8080{{obj.avatar}}" alt="">
+		</div>
+		<h1>{{obj.name}}</h1>
+		<p><span>简介 : </span>{{obj.description}}</p>
+  </script>
+  <!-- 模块2 model-2 授课商户 (渲染) -->
+	<script id="tpl-2" type="text/html">
+    	<li>
+			<div class="left f-left animated bounceInLeft">
+				<img src="http://www.mffive.com:8080{{obj.logoFile}}" alt="">
+			</div>
+			<div class="right f-left">
+				<h2>{{obj.cmpTitle}}</h2>
+				<p>{{obj.district}}</p>
+			</div>
+		</li>
+  </script>
+  <!-- 模块3 model-3 课程购买 (渲染) -->
+  <script id="tpl-3" type="text/html">
+  	{{each obj.cmpCoachClassList as item}}
+    <li>
+			<div class="left f-left">
+				<img src="http://www.mffive.com:8080{{item.classLogo}}" alt="">
+			</div>
+			<div class="right f-left">
+				<h2>{{item.title}}</h2>
+				<p>¥{{item.fivePrice}} <del>¥{{item.retailPrice}}</del></p>
+			</div>
+		</li>
+		{{/each}}
+  </script>
+  <script type="text/javascript" src="//f.moblink.mob.com/3.0.1/moblink.js?appkey=2527af3e86b85"></script>
+  <script>
+  	MobLink({
+        el: '',
+        path: 'demo/a',
+        params: {
+             key1: 'value1',
+             key2: 'value2',
+        }
+      })
+  </script>
+</body>
+</html>

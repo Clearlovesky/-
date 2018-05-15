@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>健身房详情分享</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/gymDetails.css">
+</head>
+<body>
+	<!-- 模块1 model-1 本店信息-->
+	<div class="model-1">
+	</div>
+	<!-- 模块2 model-2 本店优惠-->
+	<div class="model-2">
+		<h1 class="animated bounceInRight">本店优惠</h1>
+		<ul class="father">
+		</ul>
+	</div>
+	<!-- 底部 前往Five -->
+	<div class="lookmore animated bounceInLeft">
+		<h1>到 Five 查看更多</h1>
+	</div>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/gymDetails.js"></script>
+	<script src="js/template.js"></script>
+	<!-- 模块1 model-1 本店信息 (渲染) -->
+	<script id="tpl-1" type="text/html">
+    <div class="img animated bounce">
+			<img src="http://www.mffive.com:8080{{obj.backgroundFile}}" alt="">
+		</div>
+		<h1>{{obj.title}}</h1>
+		<p><span>地点 : </span>{{obj.address}}</p>
+		<p><span>营业时间 : </span>{{obj.openTime}}</p>
+  </script>
+  <!-- 模块2 model-2 本店优惠 (渲染) -->
+	<script id="tpl-2" type="text/html">
+		{{each obj.cardList as card}}
+    <li>
+			<div class="left f-left">
+				<img class="animated bounce" src="http://www.mffive.com:8080{{card.cardPicUrl}}" alt="">
+			</div>
+			<div class="right f-left">
+				<h2>{{card.title}}</h2>
+				<p>¥{{card.fivePrice}} <del>¥{{card.retailPrice}}</del></p>
+			</div>
+		</li>
+		{{/each}}
+  </script>
+  <script type="text/javascript" src="//f.moblink.mob.com/3.0.1/moblink.js?appkey=2527af3e86b85"></script>
+  <script>
+  	MobLink({
+        el: '',
+        path: 'demo/a',
+        params: {
+             key1: 'value1',
+             key2: 'value2',
+        }
+      })
+  </script>
+</body>
+</html>

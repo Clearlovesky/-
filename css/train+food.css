@@ -1,0 +1,75 @@
+/*模块1 model-1 本店信息*/
+@media (min-width: 766px){
+	.model-1{
+		max-width: 1024px;
+		margin: 0 auto;
+		margin-bottom: 2rem;
+		/*margin-top: 6rem;*/
+	}
+	.img{
+		width: 100%;
+		overflow: hidden;
+	}
+	.img img{
+		width: 100%;
+	}
+	.model-1 h1{
+		width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 3rem;
+    padding: 2rem;
+    font-weight: bold;
+	}
+	.model-1 pre{
+		width: 100%;
+    font-size: 1.8rem;
+    overflow: hidden;
+    color: #4A4A4A;
+    font-family: PingFangSC;
+    padding: 20px 20px;
+	}
+}
+
+@media (max-width: 766px){
+	.model-1{
+		max-width: 1024px;
+		margin: 0 auto;
+		margin-bottom: 1rem;
+		/*margin-top: 4rem;*/
+	}
+	.img{
+		width: 100%;
+		/* height: 15rem; */
+		overflow: hidden;
+	}
+	.img img{
+		width: 100%;
+	}
+	.model-1 h1{
+		width: 100%;
+		text-align: center;
+		color: #000;
+		font-size: 1.3rem;
+		padding: 1rem 1rem;
+		font-weight: bold;
+	}
+	.model-1 pre{
+		width: 100%;
+    font-size: 1rem;
+    overflow: hidden;
+    color: #4A4A4A;
+    font-family: PingFangSC;
+    padding: 12px 12px;
+	}
+}
+/* pre标签会原样保留HTML内容的格式，可是如果宽度过大会把页面撑坏 */
+/* 让pre标签自动换行 */
+pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+

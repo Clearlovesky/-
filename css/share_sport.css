@@ -1,0 +1,43 @@
+.tip{
+	position: fixed;
+	top: 2rem;
+	left: 0rem;
+	width: 80%;
+	height: 8rem;
+	background-color: #fff;
+	opacity: 0.8;
+	margin-left: 10%;
+	box-shadow: 0px 2px 6px 0px #b7b7b7
+}
+.tip h1{
+	width: 100%;
+	font-size: 1rem;
+	text-align: center;
+	padding: 1rem 1rem;
+	color: #5f5b5b;
+}
+.tip h1 span{
+	font-size: 2rem;
+	color: #000;
+}
+.tip ul{
+	width: 100%;
+}
+.tip ul li{
+	width: 50%;
+	height: 3rem;
+	text-align: center;
+
+}
+.tip ul li h2{
+	width: 100%;
+	font-size: 1rem;
+	padding-bottom: 0.5rem;
+	font-weight: bold;
+	color: #000;
+}
+.tip ul li p{
+	width: 100%;
+	font-size: 0.8rem;
+	color: #5f5b5b;
+}

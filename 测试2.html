@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <!-- <base href="//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/" /> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <title>简单路径</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.4.6&key=63df82097df07212f4f2190dda9dd3aa"></script>
+    <!-- UI组件库 1.0 -->
+    <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <script type="text/javascript">
+    //创建地图
+    var map = new AMap.Map('container', {
+        zoom: 100
+    });
+    AMapUI.load(['ui/misc/PathSimplifier', 'lib/$'], function(PathSimplifier, $) {
+        if (!PathSimplifier.supportCanvas) {
+            alert('当前环境不支持 Canvas！');
+            return;
+        }
+        var pathSimplifierIns = new PathSimplifier({
+            zIndex: 100,
+            //autoSetFitView:false,
+            map: map, //所属的地图实例
+            getPath: function(pathData, pathIndex) {
+            	console.log(pathData.path)
+                return pathData.path;
+            },
+        });
+        window.pathSimplifierIns = pathSimplifierIns;
+        //设置数据
+        pathSimplifierIns.setData([{
+            path: [
+                [119.957483, 31.66636],
+                [119.957583, 31.66536],
+                [119.957583, 31.66436],
+            ]
+        }]);
+        //对第一条线路（即索引 0）创建一个巡航器
+        var navg1 = pathSimplifierIns.createPathNavigator(0, {
+            loop: true, //循环播放
+            speed: 1000000 //巡航速度，单位千米/小时
+        });
+        navg1.start();
+    });
+
+
+    // 怎么把下面lineArr数据  替换到   上面的path里面
+    $.ajax({
+	    url:"http://www.mffive.com:8080/trainInfo/getTrainInfoById",
+	    type:"post",
+	    data:{
+	        id:2
+	    },
+	    success:function(data){ 
+	    	newLine = new Array();
+	        newLine.push(jQuery.parseJSON(data.obj.line)) 
+	        lineArr = new Array(); 
+	        for(var i = 0;i<newLine[0].length;i++){
+	            X =(newLine[0])[i].location_Lng;
+	            Y = (newLine[0])[i].location_Lat;
+	            lineArr.push([X,Y])
+	        }
+	        console.log(lineArr)
+	    },
+	    error:function(){
+	        console.log("请求失败!");
+	    }
+	})
+    </script>
+</body>
+
+</html>
